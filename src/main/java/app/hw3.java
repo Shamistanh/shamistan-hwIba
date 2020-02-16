@@ -1,6 +1,5 @@
 package app;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class hw3 {
@@ -23,34 +22,40 @@ public class hw3 {
         sch[6][1] = "go to courses; watch a film";
 
         String day;
+        int flag=0;
 
         while (true){
             System.out.print("Please, input the day of the week: ");
             day=sc.nextLine();
+            day=day.toLowerCase();
+            day=day.trim();
             switch (day){
-                case "Sunday":
+                case "sunday":
                     System.out.println("Your tasks for Sunday: "+sch[0][1]);break;
 
-                case "Monday":
+                case "monday":
                     System.out.println("Your tasks for Monday: "+sch[1][1]);break;
-                case "Tuesday":
+                case "tuesday":
                     System.out.println("Your tasks for Tuesday: "+sch[2][1]);break;
-                case "Wednesday":
+                case "wednesday":
                     System.out.println("Your tasks for Wednesday: "+sch[3][1]);break;
-                case "Thursday":
+                case "thursday":
                     System.out.println("Your tasks for Thursday: "+sch[4][1]);break;
 
-                case "Friday":
+                case "friday":
                     System.out.println("Your tasks for Friday: "+sch[5][1]); break;
-                case "Saturday":
+                case "saturday":
                     System.out.println("Your tasks for Saturday: "+sch[6][1]);break;
+                case "exit":
+                    flag=1;break;
                 default:
                     System.out.println("Sorry, I don't understand you, please try again.");
             }
-
-            if(day.equals("exit")){
+            if(flag==1){
                 break;
             }
+
+
         }
 
             }
