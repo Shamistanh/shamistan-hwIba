@@ -14,7 +14,7 @@ public class hw1 {
         System.out.print("Please enter your name: ");
         String name= sc.next();
         int ch=0;
-        int a=rand.nextInt(60);
+        int a=rand.nextInt(100);
         int arr []=new int[100];
         int i=0;
 
@@ -64,7 +64,7 @@ public class hw1 {
             }
         }
 
-        System.out.println("Here is your numbers: ");
+        System.out.println("Your numbers: ");
         Arrays.sort(arr);
         for(int j=arr.length-1;j>=0;j--){
             if(arr[j]!=0) {

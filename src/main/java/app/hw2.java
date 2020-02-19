@@ -10,7 +10,7 @@ public class hw2 {
 
         int a=0;
         int b=0;
-        int x=0;
+        int x;
         int y=0;
         for (int i = 0; i <6 ; i++) {
 
