@@ -33,11 +33,11 @@ public class hw2 {
         System.out.println("All set. Get ready");
         myMatrix();
 
-
-    while (true)
-    {
         a= (int)(Math.random()*5)+1;
         b= (int)(Math.random()*5)+1;
+    while (true)
+    {
+
         System.out.print("Pleae enter x: ");x=sc.nextInt();
         System.out.print("Please enter y: "); y=sc.nextInt();
 
