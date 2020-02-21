@@ -12,6 +12,6 @@ public Rectangle(Point pt1, Point pt2)
     @Override
     public void area()
     {
-        System.out.println(Math.abs(pt1.x-pt2.x)*Math.abs(pt1.y-pt2.y));
+        System.out.println(Math.abs(pt1.x-pt2.x)*(pt1.y-pt2.y));
     }
 }
