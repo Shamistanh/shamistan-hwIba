@@ -35,6 +35,12 @@ public static boolean isSign(char x){
 
         }
         for (int i = 0; i <txt.length() ; i++) {
+            if(txt.charAt(0)=='-')
+            {
+
+               isare='-';
+               result=-result;
+            }
         if(!isSign(txt.charAt(i)) && pos==0){
             eded1=eded1+txt.charAt(i);
         }
