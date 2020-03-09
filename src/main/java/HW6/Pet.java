@@ -2,9 +2,7 @@ package HW6;
 
 import java.util.Arrays;
 
-    enum Species{
-     BLUE, BLACK, ROCK, TOPLAN, OVITI
-    }
+
 public class Pet {
 
     /***
@@ -109,7 +107,7 @@ public class Pet {
                 ", nickname='" + nickname + '\'' +
                 ", age=" + age +
                 ", tricklevel=" + tricklevel +
-                ", habits=" + Arrays.deepToString(habits) +
+                ", habits=" + Arrays.toString(habits) +
                 '}';
     }
 

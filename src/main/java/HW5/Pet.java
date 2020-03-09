@@ -75,6 +75,16 @@ public class Pet {
         this.habits = habits;
     }
 
+    @Override
+    public int hashCode() {
+        return (int)(Math.random()*age+tricklevel);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+
     public void eat(){
         System.out.println("I am eating");
     }

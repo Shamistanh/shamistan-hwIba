@@ -1,4 +1,6 @@
-package HW5;
+package HW7;
+
+
 
 import java.util.Arrays;
 
@@ -12,46 +14,46 @@ public class Human {
     private Human mother;
     private Human father;
     private String [][]schedule= new String[6][2];
-    private  Family family;
+    private Family family;
 
 
 
-//    private Human(String name, String surname, int year)
-//    {
-//        this.name=name;
-//        this.surname=surname;
-//        this.year=year;
-//    }
-//    private Human(String name, String surname)
-//    {
-//        this.name=name;
-//        this.surname=surname;
-//    }
-//    private Human(String name, String surname, int year, Human father, Human mother)
-//    {
-//        this.name=name;
-//        this.surname=surname;
-//        this.year=year;
-//        this.father=father;
-//        this.mother=mother;
-//    }
-//    private Human(String name, String surname, int year, Human father, Human mother,int iq, Pet pet, String [][]schedule)
-//    {
-//        this.name=name;
-//        this.surname=surname;
-//        this.year=year;
-//        this.father=father;
-//        this.mother=mother;
-//        this.mother=mother;
-//        this.iq=iq;
-//        this.pet=pet;
-//        this.schedule=schedule;
-//    }
-//
-//
-//    public Human(){
-//
-//    }
+    public Human(String name, String surname, int year)
+    {
+        this.name=name;
+        this.surname=surname;
+        this.year=year;
+    }
+    public Human(String name, String surname)
+    {
+        this.name=name;
+        this.surname=surname;
+    }
+    public Human(String name, String surname, int year, Human father, Human mother)
+    {
+        this.name=name;
+        this.surname=surname;
+        this.year=year;
+        this.father=father;
+        this.mother=mother;
+    }
+    public Human(String name, String surname, int year, Human father, Human mother, int iq, Pet pet, String [][]schedule)
+    {
+        this.name=name;
+        this.surname=surname;
+        this.year=year;
+        this.father=father;
+        this.mother=mother;
+        this.mother=mother;
+        this.iq=iq;
+        this.pet=pet;
+        this.schedule=schedule;
+    }
+
+
+    public Human(){
+
+    }
 
     public String getName() {
         return name;
@@ -146,27 +148,27 @@ public class Human {
                 '}';
     }
 
-    public void greetPet() {
-        System.out.println("Hello, " + pet.getNickname());
+    public String greetPet() {
+        return "Hello, " + pet.getNickname();
     }
 
-    public void describePet() {
+    public String describePet() {
 
         if(pet.getTricklevel()>50)
         {
-            System.out.println("I have a " + pet.getSpecies() + ", he is " + pet.getAge() + " years old, he is very sly");
+            return  "I have a " + pet.getSpecies() + ", he is " + pet.getAge() + " years old, he is very sly";
         }
         else
         {
-            System.out.println("I have a " + pet.getSpecies() + ", he is " + pet.getAge() + " years old, he is almost not sly");
+            return "I have a " + pet.getSpecies() + ", he is " + pet.getAge() + " years old, he is almost not sly";
         }
 
     }
-    public int countFamily(){
-        int cnt=2; // father and mother
-        cnt+= family.getChildren().length;
 
-        return cnt;
+
+    @Override
+    protected void finalize() throws Throwable {
+        System.out.println("Finalize method worked in Human class");
     }
 
 }

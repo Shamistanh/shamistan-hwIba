@@ -1,15 +1,12 @@
-package HW6;
+package HW7;
 
 import java.util.Arrays;
-import java.util.Objects;
 
 public class Family {
     private Human hmn = new Human();
-
+    private Human mother = new Human();
+    private Human father = hmn.getFather();
     private Human[] children = new Human[0];
-    private Pet pet;
-    private Human mother;
-    private Human father;
 
 
 
@@ -29,13 +26,13 @@ public class Family {
         this.father = father;
     }
 
-    public Pet getPet() {
-        return pet;
-    }
-
-    public void setPet(Pet pet) {
-        this.pet = pet;
-    }
+//    public Pet getPet() {
+//        return pet;
+//    }
+//
+//    public void setPet(Pet pet) {
+//        this.pet = pet;
+//    }
 
     public Human getMother() {
         return mother;
@@ -61,19 +58,14 @@ public class Family {
 
     public Human[] deleteChild(Human child){
         int j=0;
-        if(children.length>1){
-            Human [] humn = new Human[children.length-1];
-            for(Human el: children){
-                if(!el.equals(child)){
-                    humn[j]=el;
-                    j++;
-                }
+        Human [] humn = new Human[children.length-1];
+        for(Human el: children){
+            if(!el.equals(child)){
+                humn[j]=el;
+                j++;
             }
-            children=humn;
-        }else{
-            throw new IndexOutOfBoundsException("There is no child");
         }
-
+        children=humn;
         return children;
     }
     public Human[] deleteChild(int index){
@@ -87,43 +79,35 @@ public class Family {
                 }
             }
             children=humn;
-        }else{
-            throw new IndexOutOfBoundsException("Please enter the correct index");
+        }
+        else{
+            throw new IndexOutOfBoundsException("there is no child");
         }
 
         return children;
     }
     public int countFamily(){
         int cnt=2; // father and mother
-            cnt=cnt+children.length;
+        cnt=cnt+children.length;
 
         return cnt;
     }
 
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Family family = (Family) o;
-        return Arrays.equals(children, family.children) &&
-                Objects.equals(pet, family.pet) &&
-                Objects.equals(mother, family.mother) &&
-                Objects.equals(father, family.father);
+    public int hashCode() {
+        return (int)(Math.random()*3+children.length);
     }
 
     @Override
-    public int hashCode() {
-        int result = Objects.hash(pet, mother, father);
-        result = 31 * result + Arrays.hashCode(children);
-        return result;
+    public boolean equals(Object obj) {
+        return super.equals(obj);
     }
 
     @Override
     public String toString() {
         return "Family{" +
                 "hmn=" + hmn +
-                ", pet=" + pet +
                 ", mother=" + mother +
                 ", father=" + father +
                 ", children=" + Arrays.deepToString(children) +

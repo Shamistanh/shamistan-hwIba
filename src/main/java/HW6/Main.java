@@ -1,11 +1,6 @@
 package HW6;
 
-import java.util.Arrays;
-
 public class Main {
-    enum DayOfWeek{
-        Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
-    }
     public String name(DayOfWeek day){
         String name;
        switch (day){
@@ -37,10 +32,10 @@ public class Main {
             hmn2.setName("Michael");
             hmn2.setSurname("Karloene");
             hmn2.setYear(72);
-            hmn2.setFather(fthr);
-            hmn2.setMother(mthr);
+            fmly.setFather(fthr);
+            fmly.setMother(mthr);
             hmn2.setIq(80);
-            hmn2.setPet(pt);
+            fmly.setPet(pt);
             hmn2.setSchedule(new String[][]{{"Monday"},{"To go university"}});
           //  System.out.println(hmn2);
 
@@ -50,17 +45,17 @@ public class Main {
 
 
           //   pet with setters and getters
-       pt.setSpecies(Species.ROCK);
-       pt.setAge(5);
-       pt.setNickname("smth");
-       pt.setTricklevel(75);
-       pt.setHabits(new String[]{"eat", "play", "run"});
+           pt.setSpecies(Species.ROCK);
+           pt.setAge(5);
+           pt.setNickname("smth");
+           pt.setTricklevel(75);
+           pt.setHabits(new String[]{"eat", "play", "run"});
         fmly.setMother(mthr);
         fmly.setFather(fthr);
         fmly.setPet(pt);
         fmly.setChildren(new Human[]{new Human()});
 
-        Human as=new Human("Salam","sasasasas",70,new Human("fdfdf","fdfdfd",52),new Human("weerererf","zxzxzx",45),80, new Pet(Species.ROCK,"rock0",50,120,new String[]{"eat","fdfdfdf"}),new String[][]{{"tgy"},{"ghbnj"}});
+        Human as=new Human("Salam","sasasasas",70);
         Human as2=new Human("Saam","stfghasas",70);
         Human as3=new Human("lfdfdaam","stfgdfdfdhasas",70);
         fmly.addChild(as);
