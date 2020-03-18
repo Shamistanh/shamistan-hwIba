@@ -9,9 +9,15 @@ public class Circle extends Figure {
 
 
     }
+
+    public static Circle rand(){
+        Point r1=new Point((int)(Math.random()*10+5),(int)(Math.random()*10+5));
+        int RandRad=(int)(Math.random()*10+5);
+        return new Circle(r1,RandRad);
+    }
     @Override
-    public void area()
+    public int area()
     {
-        System.out.println((3.14)*radius*radius);
+        return (int)(Math.PI*radius*radius);
     }
 }

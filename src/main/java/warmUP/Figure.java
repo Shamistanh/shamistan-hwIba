@@ -1,9 +1,9 @@
 package warmUP;
 
-public class Figure {
+public abstract class Figure {
 
 
-    public void area(){
+    public abstract int area();
+//        throw new IllegalArgumentException("figure size() should not be called");
 
-    }
 }

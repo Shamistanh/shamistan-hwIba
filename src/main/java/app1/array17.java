@@ -1,6 +1,4 @@
-package app;
-
-import java.util.Random;
+package app1;
 
 public class array17 {
 
@@ -11,12 +9,14 @@ public class array17 {
         int range2 = 'z'-'a' + 1;
         int start = 'A';
         int start2= 'a';
+
         StringBuilder rand_s = new StringBuilder();
         for (int i = 0; i < 30; i++) {
-            char letter = (char) (Math.random() * range + start);
-            char letter2 = (char) (Math.random() * range2 + start2);
+            int oneOrZero= (int)(Math.random()*2);
+            char letter = (char) (Math.random() * range + start+32*oneOrZero);
+
             rand_s.append(letter);
-            rand_s.append(letter2);
+
         }
         String random = rand_s.toString();
         StringBuilder vowels = new StringBuilder();

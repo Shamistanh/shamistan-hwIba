@@ -70,15 +70,13 @@ public class Family {
                 }
             }
             children=humn;
-        }else{
-            throw new IndexOutOfBoundsException("There is no child");
         }
 
         return children;
     }
     public Human[] deleteChild(int index){
         int j=0;
-        if(index>0){
+        if(index>0 && index<children.length){
             Human [] humn = new Human[children.length-1];
             for (int i = 0; i <children.length ; i++) {
                 if(index!=i){

@@ -3,8 +3,8 @@ package HW7;
 public class DomesticCat extends Pet {
     Species species;
 
-    public DomesticCat(Species species, String nickname, int age, int tricklevel, String[] habits) {
-        super(species, nickname, age, tricklevel, habits);
+    public DomesticCat(String nickname, int age, int tricklevel, String[] habits) {
+        super(nickname, age, tricklevel, habits);
         this.species=species;
     }
 

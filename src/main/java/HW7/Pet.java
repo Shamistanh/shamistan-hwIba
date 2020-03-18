@@ -22,6 +22,13 @@ public abstract class Pet {
         this.species=species;
         this.nickname=nickname;
     }
+
+    public Pet(String nickname, int age, int tricklevel, String[] habits) {
+        this.nickname=nickname;
+        this.age=age;
+        this.tricklevel=tricklevel;
+        this.habits=habits;
+    }
 //    public Pet(){
 //        this.species=Species.UNKNOWN;
 //    }

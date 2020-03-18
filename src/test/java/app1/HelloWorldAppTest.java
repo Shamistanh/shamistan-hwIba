@@ -1,4 +1,4 @@
-package app;
+package app1;
 
 class HelloWorldAppTest {
 

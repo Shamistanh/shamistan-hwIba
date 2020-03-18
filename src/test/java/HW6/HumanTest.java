@@ -9,7 +9,7 @@ class HumanTest {
     Human as;
     @BeforeEach
     void setUp() {
-        as=new Human("Salam","sasasasas",70,new Human("fdfdf","fdfdfd",52),new Human("weerererf","zxzxzx",45),80, new Pet(Species.ROCK,"rock0",5,120,new String[]{"eat","fdfdfdf"}),new String[][]{{"tgy"},{"ghbnj"}});
+      //  as=new Human("Salam","sasasasas",70,new Human("fdfdf","fdfdfd",52),new Human("weerererf","zxzxzx",45),80, new Pet(Species.ROCK,"rock0",5,120,new String[]{"eat","fdfdfdf"}),new String[][]{{"tgy"},{"ghbnj"}});
 
     }
 

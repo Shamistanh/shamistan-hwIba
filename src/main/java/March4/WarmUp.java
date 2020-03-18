@@ -26,29 +26,36 @@ public class WarmUp{
     private static void write(String name) throws IOException {
         File ofile = new File(name);
         BufferedWriter bw = new BufferedWriter(new FileWriter(ofile));
+        bw.write(process());
         bw.close();
     }
 
-    public static void main(String[] args) throws IOException {
+    public static String process() throws IOException {
         Map<String, List<String>> sv = read("subj_verb_.txt");
         Map<String, List<String>> vo = read("verb_obj_.txt");
+        String cml="";
 
 
-
-for(String s: sv.keySet()){
-    for(String v: sv.get(s)){
-        for(String o: vo.get(v)){
-            newSentence(s,v,o);
+        for(String s: sv.keySet()){
+            for(String v: sv.get(s)){
+                for(String o: vo.get(v)){
+                    cml+= newSentence(s,v,o);
+                    cml+="\n";
+                }
+            }
         }
+
+      return cml;
     }
-}
+    public static void main(String[] args) throws IOException {
+
         write("file9.txt");
     }
 
-    private static void newSentence(String s, String v, String o) {
+    private static String newSentence(String s, String v, String o) {
         String cumle="";
         cumle = String.format("%s %s %s", s,v,o);
-        System.out.println(cumle);
+        return cumle;
     }
 
 

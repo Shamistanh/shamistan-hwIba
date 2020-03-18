@@ -1,4 +1,4 @@
-package app;
+package app1;
 
 import java.util.Scanner;
 
@@ -27,8 +27,7 @@ public class hw3 {
         while (true){
             System.out.print("Please, input the day of the week: ");
             day=sc.nextLine();
-            day=day.toLowerCase();
-            day=day.trim();
+            day=day.toLowerCase().trim();
             switch (day){
                 case "sunday":
                     System.out.println("Your tasks for Sunday: "+sch[0][1]);break;

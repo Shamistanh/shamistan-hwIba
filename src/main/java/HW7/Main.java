@@ -57,10 +57,11 @@ public class Main {
     //    Human as=new Human("Salam","sasasasas",70,new Human("fdfdf","fdfdfd",52),new Human("weerererf","zxzxzx",45),80, new Pet(Species.ROCK,"rock0",50,120,new String[]{"eat","fdfdfdf"}),new String[][]{{"tgy"},{"ghbnj"}});
         Human as2=new Human("Saam","stfghasas",70);
         Human as3=new Human("lfdfdaam","stfgdfdfdhasas",70);
-
+       // DomesticCat dc = new DomesticCat(Species.ROCK,"rocky",5,23,new String[]{"eat", "play"});
         fmly.addChild(as2);
         fmly.addChild(as3);
         System.out.println(hmn2.describePet()); // describe pet method
+
         System.out.println(hmn2.greetPet());
 
 

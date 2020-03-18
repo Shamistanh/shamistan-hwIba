@@ -3,8 +3,8 @@ package HW7;
 abstract  class Fish extends Pet {
     Species species;
 
-    public Fish(Species species, String nickname, int age, int tricklevel, String[] habits) {
-        super(species, nickname, age, tricklevel, habits);
+    public Fish(String nickname, int age, int tricklevel, String[] habits) {
+        super(nickname, age, tricklevel, habits);
         this.species=species;
     }
 

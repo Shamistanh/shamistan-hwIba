@@ -1,24 +1,35 @@
 package warmUP;
 
 public class Triangle extends Figure {
-    Point pt1;
-    Point pt2;
-    Point pt3;
-    public Triangle(Point pt1, Point pt2, Point pt3)
-    {
-        this.pt1=pt1;
-        this.pt2=pt2;
-        this.pt3=pt3;
+    Point point1;
+    Point point2;
+    Point point3;
+
+    public Triangle(Point pt1, Point pt2, Point pt3) {
+        this.point1 =pt1;
+        this.point2 =pt2;
+        this.point3 =pt3;
     }
+
+    public static Triangle rand(){
+        Point r1=new Point((int)(Math.random()*10+5),(int)(Math.random()*10+5));
+        Point r2=new Point((int)(Math.random()*10+5),(int)(Math.random()*10+5));
+        Point r3=new Point((int)(Math.random()*10+5),(int)(Math.random()*10+5));
+        return new Triangle(r1,r2,r3);
+    }
+
+    private double distance(Point p1, Point p2) {
+        return Math.sqrt((p2.x-p1.x)*(p2.x-p1.x)+(p2.y-p1.y)*(p2.y-p1.y));
+    }
+
     @Override
-    public void area()
-    {
-        double d1=Math.sqrt((pt2.x-pt1.x)*(pt2.x-pt1.x)+(pt2.y-pt1.y)*(pt2.y-pt1.y));
-        double d2=Math.sqrt((pt3.x-pt1.x)*(pt3.x-pt1.x)+(pt3.y-pt1.y)*(pt3.y-pt1.y));
-        double d3=Math.sqrt((pt3.x-pt2.x)*(pt3.x-pt2.x)+(pt3.y-pt2.y)*(pt3.y-pt2.y));
-        double hp=(d1+d2+d3)/2;
-        double a=Math.sqrt(hp*(hp-d1)*(hp-d2)*(hp-d3));
-        System.out.println(a);
+    public int area() {
+        double side1 = distance(point1, point2);
+        double side2 = distance(point2, point3);
+        double side3 = distance(point3, point1);
+        double hp = (side1 + side2 + side3) / 2;
+        return (int)(Math.sqrt(hp*(hp-side1)*(hp-side2)*(hp-side3)));
     }
 
 }
+

@@ -61,8 +61,8 @@ public class Main {
         fmly.addChild(as);
         fmly.addChild(as2);
         fmly.addChild(as3);
-        System.out.println(hmn2.describePet()); // describe pet method
-        System.out.println(hmn2.greetPet());
+//        System.out.println(hmn2.describePet()); // describe pet method
+//        System.out.println(hmn2.greetPet());
 
 
         System.out.printf("Number of family members: %d\n",fmly.countFamily());
