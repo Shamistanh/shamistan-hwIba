@@ -11,16 +11,16 @@ public class RoboCat extends Pet {
 
     @Override
     public String eat() {
-        return null;
+        return "RoboCat eats";
     }
 
     @Override
     public String respond() {
-        return null;
+        return "RoboCat responds";
     }
 
     @Override
     public String foul() {
-        return null;
+        return "RoboCat fouls";
     }
 }
