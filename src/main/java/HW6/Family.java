@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Objects;
 
 public class Family {
-    private Human hmn = new Human();
+   // private Human hmn = new Human();
 
     private Human[] children = new Human[0];
     private Pet pet;
@@ -12,6 +12,12 @@ public class Family {
     private Human father;
 
 
+    public Family(Human[] children, Pet pet, Human mother, Human father) {
+        this.children = children;
+        this.pet = pet;
+        this.mother = mother;
+        this.father = father;
+    }
 
     public Human[] getChildren() {
         return children;
@@ -120,7 +126,6 @@ public class Family {
     @Override
     public String toString() {
         return "Family{" +
-                "hmn=" + hmn +
                 ", pet=" + pet +
                 ", mother=" + mother +
                 ", father=" + father +

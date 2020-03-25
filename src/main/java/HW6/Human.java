@@ -1,6 +1,7 @@
 package HW6;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 public class Human {
 
@@ -82,13 +83,24 @@ public class Human {
     }
 
     @Override
-    public int hashCode() {
-        return (int)(Math.random()*10)+iq;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Human human = (Human) o;
+        return year == human.year &&
+                iq == human.iq &&
+                Objects.equals(name, human.name) &&
+                Objects.equals(surname, human.surname) &&
+                Arrays.equals(schedule, human.schedule) &&
+                Objects.equals(family, human.family) &&
+                Objects.equals(pet, human.pet);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
+    public int hashCode() {
+        int result = Objects.hash(name, surname, year, iq, family, pet);
+        result = 31 * result + Arrays.hashCode(schedule);
+        return result;
     }
 
     @Override
@@ -102,6 +114,8 @@ public class Human {
                 ", family=" + family +
                 '}';
     }
+
+
 
     public String greetPet() {
         return "Hello, " + pet.getNickname();

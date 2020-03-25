@@ -10,6 +10,15 @@ public class Family {
     private Human father = hmn.getFather();
     private Human [] children;
 
+    public Family(Human hmn, Pet pet, Human mother, Human father, Human[] children) {
+        this.hmn = hmn;
+        this.pet = pet;
+        this.mother = mother;
+        this.father = father;
+        this.children = children;
+    }
+
+    public Family(){}
 
     public Human[] getChildren() {
         return children;
@@ -43,6 +52,7 @@ public class Family {
         this.mother = mother;
     }
 
+
     public Human[] deleteChild(Human child){
         int j=0;
         if(children.length>1){
@@ -54,17 +64,19 @@ public class Family {
                 }
             }
             children=humn;
-        }else{
-            throw new IndexOutOfBoundsException("There is no child");
         }
 
         return children;
     }
 
-    public void addChild(Human child){
-        Human [] chldrn = new Human[this.children.length+1];
-        chldrn[this.children.length]=child;
+    public Human[] addChild(Human child){
+        Human[] chldrn = new Human[children.length+1];
+        chldrn[children.length]=child;
+        for (int i = 0; i <children.length ; i++) {
+            chldrn[i]=children[i];
+        }
         this.children=chldrn;
+        return children;
     }
 
     @Override

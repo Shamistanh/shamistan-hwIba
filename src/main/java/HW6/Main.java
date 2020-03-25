@@ -24,9 +24,8 @@ public class Main {
          Human fthr =new Human();
          fthr.setName("Vito");
          fthr.setSurname("Karleone");
-         Human mthr =new Human();
-         mthr.setName("Jane");
-         mthr.setSurname("Karleone");
+         Human mthr =new Human("Jane","Karloane");
+
 
        // for (int i = 0; i <1000000 ; i++) {  use this for checking finalize method
             hmn2.setName("Michael");
