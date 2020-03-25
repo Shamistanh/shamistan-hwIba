@@ -1,6 +1,7 @@
 package HW7;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 public class Family {
     private Human hmn = new Human();
@@ -95,13 +96,21 @@ public class Family {
 
 
     @Override
-    public int hashCode() {
-        return (int)(Math.random()*3+children.length);
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Family family = (Family) o;
+        return Objects.equals(hmn, family.hmn) &&
+                Objects.equals(mother, family.mother) &&
+                Objects.equals(father, family.father) &&
+                Arrays.equals(children, family.children);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
+    public int hashCode() {
+        int result = Objects.hash(hmn, mother, father);
+        result = 31 * result + Arrays.hashCode(children);
+        return result;
     }
 
     @Override
