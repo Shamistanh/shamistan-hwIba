@@ -4,21 +4,22 @@ import java.util.Arrays;
 import java.util.Objects;
 
 public class Family {
-    private Human hmn = new Human();
-    private Pet pet = new Pet();
-    private Human mother =hmn.getMother();
-    private Human father = hmn.getFather();
-    private Human [] children;
 
-    public Family(Human hmn, Pet pet, Human mother, Human father, Human[] children) {
-        this.hmn = hmn;
+    private Pet pet = new Pet();
+    private Human mother;
+    private Human father;
+    private Human[] children;
+
+    public Family(Pet pet, Human mother, Human father, Human[] children) {
+        children = new Human[0];
         this.pet = pet;
         this.mother = mother;
         this.father = father;
         this.children = children;
     }
 
-    public Family(){}
+    public Family() {
+    }
 
     public Human[] getChildren() {
         return children;
@@ -53,29 +54,29 @@ public class Family {
     }
 
 
-    public Human[] deleteChild(Human child){
-        int j=0;
-        if(children.length>1){
-            Human[] humn = new Human[children.length-1];
-            for(Human el: children){
-                if(!el.equals(child)){
-                    humn[j]=el;
+    public Human[] deleteChild(Human child) {
+        int j = 0;
+        if (children.length > 1) {
+            Human[] humn = new Human[children.length - 1];
+            for (Human el : children) {
+                if (!el.equals(child)) {
+                    humn[j] = el;
                     j++;
                 }
             }
-            children=humn;
+            children = humn;
         }
 
         return children;
     }
 
-    public Human[] addChild(Human child){
-        Human[] chldrn = new Human[children.length+1];
-        chldrn[children.length]=child;
-        for (int i = 0; i <children.length ; i++) {
-            chldrn[i]=children[i];
+    public Human[] addChild(Human child) {
+        Human[] chldrn = new Human[children.length + 1];
+        chldrn[children.length] = child;
+        for (int i = 0; i < children.length; i++) {
+            chldrn[i] = children[i];
         }
-        this.children=chldrn;
+        this.children = chldrn;
         return children;
     }
 
@@ -100,14 +101,12 @@ public class Family {
     @Override
     public String toString() {
         return "Family{" +
-                "hmn=" + hmn +
                 ", pet=" + pet +
                 ", mother=" + mother +
                 ", father=" + father +
                 ", children=" + Arrays.toString(children) +
                 '}';
     }
-
 
 
     //    public Family(String name, String surname, Human []children) {

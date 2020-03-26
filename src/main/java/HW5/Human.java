@@ -5,54 +5,53 @@ import java.util.Objects;
 
 public class Human {
 
-    private String name="";
-    private String surname="";
-    private int year=0;
-    private int iq=0;
+    private String name = "";
+    private String surname = "";
+    private int year = 0;
+    private int iq = 0;
     private Pet pet;
     private Human mother;
     private Human father;
-    private String [][]schedule= new String[6][2];
-    private  Family family;
+    private String[][] schedule = new String[6][2];
+    private Family family;
 
 
+    private Human(String name, String surname, int year) {
+        this.name = name;
+        this.surname = surname;
+        this.year = year;
+    }
 
-    private Human(String name, String surname, int year)
-    {
-        this.name=name;
-        this.surname=surname;
-        this.year=year;
+    private Human(String name, String surname) {
+        this.name = name;
+        this.surname = surname;
     }
-    private Human(String name, String surname)
-    {
-        this.name=name;
-        this.surname=surname;
+
+    private Human(String name, String surname, int year, Human father, Human mother) {
+        this.name = name;
+        this.surname = surname;
+        this.year = year;
+        this.father = father;
+        this.mother = mother;
     }
-    private Human(String name, String surname, int year, Human father, Human mother)
-    {
-        this.name=name;
-        this.surname=surname;
-        this.year=year;
-        this.father=father;
-        this.mother=mother;
-    }
-    private Human(String name, String surname, int year, Human father, Human mother,int iq, Pet pet, String [][]schedule)
-    {
-        this.name=name;
-        this.surname=surname;
-        this.year=year;
-        this.father=father;
-        this.mother=mother;
-        this.mother=mother;
-        this.iq=iq;
-        this.pet=pet;
-        this.schedule=schedule;
+
+    private Human(String name, String surname, int year, Human father, Human mother, int iq, Pet pet, String[][] schedule) {
+        this.name = name;
+        this.surname = surname;
+        this.year = year;
+        this.father = father;
+        this.mother = mother;
+        this.mother = mother;
+        this.iq = iq;
+        this.pet = pet;
+        this.schedule = schedule;
     }
 
 
-    public Human(){
+    public Human() {
 
     }
+
 
     public String getName() {
         return name;
@@ -176,19 +175,17 @@ public class Human {
 
     public void describePet() {
 
-        if(pet.getTricklevel()>50)
-        {
+        if (pet.getTricklevel() > 50) {
             System.out.println("I have a " + pet.getSpecies() + ", he is " + pet.getAge() + " years old, he is very sly");
-        }
-        else
-        {
+        } else {
             System.out.println("I have a " + pet.getSpecies() + ", he is " + pet.getAge() + " years old, he is almost not sly");
         }
 
     }
-    public int countFamily(){
-        int cnt=2; // father and mother
-        cnt+= family.getChildren().length;
+
+    public int countFamily() {
+        int cnt = 2; // father and mother
+        cnt += family.getChildren().length;
 
         return cnt;
     }

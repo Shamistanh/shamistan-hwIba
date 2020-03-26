@@ -95,17 +95,15 @@ public class Pet {
         return result;
     }
 
-    public void eat(){
+    public void eat() {
         System.out.println("I am eating");
     }
 
-    public void respond()
-    {
-        System.out.println("Hello, owner. I am "+nickname+" . I miss you!");
+    public void respond() {
+        System.out.println("Hello, owner. I am " + nickname + " . I miss you!");
     }
 
-    public void foul()
-    {
+    public void foul() {
         System.out.println("I need to cover it up");
     }
 
