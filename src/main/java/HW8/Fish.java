@@ -3,12 +3,12 @@ package HW8;
 import HW7.Pet;
 
 
-abstract  class Fish extends Pet {
+abstract class Fish extends Pet {
     Species species;
 
     public Fish(String nickname, int age, int tricklevel, String[] habits) {
         super(nickname, age, tricklevel, habits);
-        this.species=species;
+        this.species = species;
     }
 
     @Override

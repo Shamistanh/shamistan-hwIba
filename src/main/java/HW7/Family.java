@@ -9,7 +9,12 @@ public class Family {
     private Human father = hmn.getFather();
     private Human[] children = new Human[0];
 
-
+    public Family(Human hmn, Human mother, Human father, Human[] children) {
+        this.hmn = hmn;
+        this.mother = mother;
+        this.father = father;
+        this.children = children;
+    }
 
     public Human[] getChildren() {
         return children;
@@ -44,52 +49,50 @@ public class Family {
     }
 
 
-
-
-
-    public Human [] addChild(Human child){
-        Human[] chldrn = new Human[children.length+1];
-        chldrn[children.length]=child;
-        for (int i = 0; i <children.length ; i++) {
-            chldrn[i]=children[i];
+    public Human[] addChild(Human child) {
+        Human[] chldrn = new Human[children.length + 1];
+        chldrn[children.length] = child;
+        for (int i = 0; i < children.length; i++) {
+            chldrn[i] = children[i];
         }
-        this.children=chldrn;
+        this.children = chldrn;
         return children;
     }
 
-    public Human[] deleteChild(Human child){
-        int j=0;
-        Human [] humn = new Human[children.length-1];
-        for(Human el: children){
-            if(!el.equals(child)){
-                humn[j]=el;
+    public Human[] deleteChild(Human child) {
+        int j = 0;
+        Human[] humn = new Human[children.length - 1];
+        for (Human el : children) {
+            if (!el.equals(child)) {
+                humn[j] = el;
                 j++;
             }
         }
-        children=humn;
+        children = humn;
         return children;
     }
-    public Human[] deleteChild(int index){
-        int j=0;
-        if(index>0){
-            Human [] humn = new Human[children.length-1];
-            for (int i = 0; i <children.length ; i++) {
-                if(index!=i){
-                    humn[j]=children[i];
+
+    public Human[] deleteChild(int index) {
+        int j = 0;
+        if (index > 0) {
+            Human[] humn = new Human[children.length - 1];
+            for (int i = 0; i < children.length; i++) {
+                if (index != i) {
+                    humn[j] = children[i];
                     j++;
                 }
             }
-            children=humn;
-        }
-        else{
+            children = humn;
+        } else {
             throw new IndexOutOfBoundsException("there is no child");
         }
 
         return children;
     }
-    public int countFamily(){
-        int cnt=2; // father and mother
-        cnt=cnt+children.length;
+
+    public int countFamily() {
+        int cnt = 2; // father and mother
+        cnt = cnt + children.length;
 
         return cnt;
     }
@@ -123,8 +126,6 @@ public class Family {
                 '}';
 
     }
-
-
 
 
     @Override

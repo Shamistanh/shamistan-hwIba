@@ -7,29 +7,29 @@ import java.util.Collection;
 public abstract class Pet {
     int TrickLevel;
     private Species species = Species.UNKNOWN;
-    private String nickname="";
+    private String nickname = "";
     private int age;
-    private int tricklevel=0;
+    private int tricklevel = 0;
     private Collection<String> habits;
 
-    public Pet(Species species, String nickname, int age, int tricklevel, Collection<String> habits){
-        this.species=species;
-        this.nickname=nickname;
-        this.age=age;
-        this.tricklevel=tricklevel;
-        this.habits =habits;
+    public Pet(Species species, String nickname, int age, int tricklevel, Collection<String> habits) {
+        this.species = species;
+        this.nickname = nickname;
+        this.age = age;
+        this.tricklevel = tricklevel;
+        this.habits = habits;
     }
-    public Pet(Species species, String nickname)
-    {
-        this.species=species;
-        this.nickname=nickname;
+
+    public Pet(Species species, String nickname) {
+        this.species = species;
+        this.nickname = nickname;
     }
 
     public Pet(String nickname, int age, int tricklevel, Collection<String> habits) {
-        this.nickname=nickname;
-        this.age=age;
-        this.tricklevel=tricklevel;
-        this.habits=habits;
+        this.nickname = nickname;
+        this.age = age;
+        this.tricklevel = tricklevel;
+        this.habits = habits;
     }
 //    public Pet(){
 //        this.species=Species.UNKNOWN;
@@ -76,20 +76,20 @@ public abstract class Pet {
     public void setHabits(Collection<String> habits) {
         this.habits = habits;
     }
+
     public String describePet() {
 
-        if(TrickLevel>50)
-        {
-            return  "I have a " + species + ", he is " + age + " years old, he is very sly";
-        }
-        else
-        {
+        if (TrickLevel > 50) {
+            return "I have a " + species + ", he is " + age + " years old, he is very sly";
+        } else {
             return "I have a " + species + ", he is " + age + " years old, he is almost not sly";
         }
 
     }
 
     public abstract String eat();
+
     public abstract String respond();
+
     public abstract String foul();
 }

@@ -7,50 +7,48 @@ public class Human {
 
     private String name;
     private String surname;
-    private int year=0;
-    private int iq=0;
+    private int year = 0;
+    private int iq = 0;
     private Pet pet;
     private Human mother;
     private Human father;
-    private String [][]schedule= new String[6][2];
+    private String[][] schedule = new String[6][2];
     private Family family;
 
 
+    public Human(String name, String surname, int year) {
+        this.name = name;
+        this.surname = surname;
+        this.year = year;
+    }
 
-    public Human(String name, String surname, int year)
-    {
-        this.name=name;
-        this.surname=surname;
-        this.year=year;
+    public Human(String name, String surname) {
+        this.name = name;
+        this.surname = surname;
     }
-    public Human(String name, String surname)
-    {
-        this.name=name;
-        this.surname=surname;
+
+    public Human(String name, String surname, int year, Human father, Human mother) {
+        this.name = name;
+        this.surname = surname;
+        this.year = year;
+        this.father = father;
+        this.mother = mother;
     }
-    public Human(String name, String surname, int year, Human father, Human mother)
-    {
-        this.name=name;
-        this.surname=surname;
-        this.year=year;
-        this.father=father;
-        this.mother=mother;
-    }
-    public Human(String name, String surname, int year, Human father, Human mother, int iq, Pet pet, String [][]schedule)
-    {
-        this.name=name;
-        this.surname=surname;
-        this.year=year;
-        this.father=father;
-        this.mother=mother;
-        this.mother=mother;
-        this.iq=iq;
-        this.pet=pet;
-        this.schedule=schedule;
+
+    public Human(String name, String surname, int year, Human father, Human mother, int iq, Pet pet, String[][] schedule) {
+        this.name = name;
+        this.surname = surname;
+        this.year = year;
+        this.father = father;
+        this.mother = mother;
+        this.mother = mother;
+        this.iq = iq;
+        this.pet = pet;
+        this.schedule = schedule;
     }
 
 
-    public Human(){
+    public Human() {
 
     }
 
@@ -164,8 +162,6 @@ public class Human {
 
         return "Hello, ";
     }
-
-
 
 
     @Override

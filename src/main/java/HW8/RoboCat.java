@@ -8,7 +8,7 @@ public class RoboCat extends Pet {
 
     public RoboCat(String nickname, int age, int tricklevel, String[] habits) {
         super(nickname, age, tricklevel, Arrays.asList(habits));
-        this.species=species;
+        this.species = species;
     }
 
 

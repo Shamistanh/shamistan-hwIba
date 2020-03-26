@@ -1,11 +1,10 @@
 package HW7;
 
 public class DomesticCat extends Pet {
-    Species species;
 
     public DomesticCat(Species rock, String nickname, int age, int tricklevel, String[] habits) {
         super(nickname, age, tricklevel, habits);
-        this.species=species;
+        setSpecies(Species.DOMESTICAT);
     }
 
     @Override

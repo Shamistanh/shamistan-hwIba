@@ -1,11 +1,10 @@
 package HW7;
 
-abstract  class Fish extends Pet {
-    Species species;
+class Fish extends Pet {
 
     public Fish(String nickname, int age, int tricklevel, String[] habits) {
         super(nickname, age, tricklevel, habits);
-        this.species=species;
+        setSpecies(Species.FISH);
     }
 
     @Override

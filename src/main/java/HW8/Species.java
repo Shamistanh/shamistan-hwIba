@@ -1,6 +1,6 @@
 package HW8;
 
-enum Species{
+enum Species {
     BLUE, BLACK, ROCK, CAT, DOG, UNKNOWN
 }
 
