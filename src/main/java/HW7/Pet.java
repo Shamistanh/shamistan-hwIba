@@ -79,4 +79,21 @@ public abstract class Pet {
     public abstract String eat();
     public abstract String respond();
     public abstract String foul();
+
+    public String greetPet() {
+        return "Hello, " + nickname;
+    }
+
+    public String describePet() {
+
+        if(tricklevel>50)
+        {
+            return  "I have a " + species + ", he is " + age + " years old, he is very sly";
+        }
+        else
+        {
+            return "I have a " + species + ", he is " + age + " years old, he is almost not sly";
+        }
+
+    }
 }

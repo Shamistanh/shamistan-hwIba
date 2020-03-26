@@ -163,21 +163,10 @@ public class Human {
     }
 
     public String greetPet() {
-        return "Hello, " + pet.getNickname();
+        return "Hello, my pet";
     }
 
-    public String describePet() {
 
-        if(pet.getTricklevel()>50)
-        {
-            return  "I have a " + pet.getSpecies() + ", he is " + pet.getAge() + " years old, he is very sly";
-        }
-        else
-        {
-            return "I have a " + pet.getSpecies() + ", he is " + pet.getAge() + " years old, he is almost not sly";
-        }
-
-    }
 
 
     @Override
