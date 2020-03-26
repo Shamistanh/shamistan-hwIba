@@ -5,39 +5,36 @@ import java.util.Objects;
 
 public class Human {
 
-    private String name="";
-    private String surname="";
-    private int year=0;
-    private int iq=0;
-    private String [][]schedule= new String[6][2];
+    private String name = "";
+    private String surname = "";
+    private int year = 0;
+    private int iq = 0;
+    private String[][] schedule = new String[6][2];
     private Family family;
     Pet pet = new Pet();
 
 
-
-    public Human(String name, String surname, int year)
-    {
-        this.name=name;
-        this.surname=surname;
-        this.year=year;
-    }
-    public Human(String name, String surname)
-    {
-        this.name=name;
-        this.surname=surname;
+    public Human(String name, String surname, int year) {
+        this.name = name;
+        this.surname = surname;
+        this.year = year;
     }
 
-    public Human(String name, String surname, int year,int iq,String [][]schedule)
-    {
-        this.name=name;
-        this.surname=surname;
-        this.year=year;
-        this.iq=iq;
-        this.schedule=schedule;
+    public Human(String name, String surname) {
+        this.name = name;
+        this.surname = surname;
+    }
+
+    public Human(String name, String surname, int year, int iq, String[][] schedule) {
+        this.name = name;
+        this.surname = surname;
+        this.year = year;
+        this.iq = iq;
+        this.schedule = schedule;
     }
 
 
-    public Human(){
+    public Human() {
 
     }
 
@@ -116,19 +113,15 @@ public class Human {
     }
 
 
-
     public String greetPet() {
         return "Hello, " + pet.getNickname();
     }
 
     public String describePet() {
 
-        if(pet.getTricklevel()>50)
-        {
-            return  "I have a " + pet.getSpecies() + ", he is " + pet.getAge() + " years old, he is very sly";
-        }
-        else
-        {
+        if (pet.getTricklevel() > 50) {
+            return "I have a " + pet.getSpecies() + ", he is " + pet.getAge() + " years old, he is very sly";
+        } else {
             return "I have a " + pet.getSpecies() + ", he is " + pet.getAge() + " years old, he is almost not sly";
         }
 

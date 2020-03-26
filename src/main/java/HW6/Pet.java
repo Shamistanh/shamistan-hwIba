@@ -18,19 +18,20 @@ public class Pet {
     private int tricklevel;
     private String habits[];
 
-    public Pet(Species species, String nickname, int age, int tricklevel, String habits[]){
-        this.species=species;
-        this.nickname=nickname;
-        this.age=age;
-        this.tricklevel=tricklevel;
-        this.habits =habits;
+    public Pet(Species species, String nickname, int age, int tricklevel, String habits[]) {
+        this.species = species;
+        this.nickname = nickname;
+        this.age = age;
+        this.tricklevel = tricklevel;
+        this.habits = habits;
     }
-    public Pet(Species species, String nickname)
-    {
-        this.species=species;
-        this.nickname=nickname;
+
+    public Pet(Species species, String nickname) {
+        this.species = species;
+        this.nickname = nickname;
     }
-    public Pet(){
+
+    public Pet() {
 
     }
 
@@ -96,17 +97,15 @@ public class Pet {
         return result;
     }
 
-    public void eat(){
+    public void eat() {
         System.out.println("I am eating");
     }
 
-    public void respond()
-    {
-        System.out.println("Hello, owner. I am "+nickname+" . I miss you!");
+    public void respond() {
+        System.out.println("Hello, owner. I am " + nickname + " . I miss you!");
     }
 
-    public void foul()
-    {
+    public void foul() {
         System.out.println("I need to cover it up");
     }
 
