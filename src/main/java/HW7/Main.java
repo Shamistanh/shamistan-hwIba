@@ -62,7 +62,7 @@ public class Main {
        // fmly.addChild(as3);
         System.out.println(dc.describePet()); // describe pet method
 
-        System.out.println(hmn2.greetPet());
+
 
 
 //      //  fmly.deleteChild(as);
