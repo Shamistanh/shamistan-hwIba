@@ -96,7 +96,9 @@ public class Family {
 
         return cnt;
     }
-
+    public String greetPet() {
+        return "Hello, my pet";
+    }
 
     @Override
     public boolean equals(Object o) {

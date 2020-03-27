@@ -100,6 +100,21 @@ public class Family {
         return children;
     }
 
+    public String greetPet() {
+        return "Hello, " + pet.getNickname();
+    }
+
+    public String describePet() {
+
+        if (pet.getTricklevel() > 50) {
+            return "I have a " + pet.getSpecies() + ", he is " + pet.getAge() + " years old, he is very sly";
+        } else {
+            return "I have a " + pet.getSpecies() + ", he is " + pet.getAge() + " years old, he is almost not sly";
+        }
+
+    }
+
+
     public int countFamily() {
         int cnt = 2; // father and mother
         cnt = cnt + children.length;

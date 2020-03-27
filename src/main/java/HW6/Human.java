@@ -11,7 +11,6 @@ public class Human {
     private int iq = 0;
     private String[][] schedule = new String[6][2];
     private Family family;
-    Pet pet = new Pet();
 
 
     public Human(String name, String surname, int year) {
@@ -71,6 +70,14 @@ public class Human {
         this.iq = iq;
     }
 
+    public Family getFamily() {
+        return family;
+    }
+
+    public void setFamily(Family family) {
+        this.family = family;
+    }
+
     public String[][] getSchedule() {
         return schedule;
     }
@@ -89,13 +96,12 @@ public class Human {
                 Objects.equals(name, human.name) &&
                 Objects.equals(surname, human.surname) &&
                 Arrays.equals(schedule, human.schedule) &&
-                Objects.equals(family, human.family) &&
-                Objects.equals(pet, human.pet);
+                Objects.equals(family, human.family);
     }
 
     @Override
     public int hashCode() {
-        int result = Objects.hash(name, surname, year, iq, family, pet);
+        int result = Objects.hash(name, surname, year, iq, family);
         result = 31 * result + Arrays.hashCode(schedule);
         return result;
     }
@@ -113,19 +119,6 @@ public class Human {
     }
 
 
-    public String greetPet() {
-        return "Hello, " + pet.getNickname();
-    }
-
-    public String describePet() {
-
-        if (pet.getTricklevel() > 50) {
-            return "I have a " + pet.getSpecies() + ", he is " + pet.getAge() + " years old, he is very sly";
-        } else {
-            return "I have a " + pet.getSpecies() + ", he is " + pet.getAge() + " years old, he is almost not sly";
-        }
-
-    }
 
 
     @Override
