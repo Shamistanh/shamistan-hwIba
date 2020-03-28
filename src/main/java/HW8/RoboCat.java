@@ -2,12 +2,13 @@ package HW8;
 
 
 import java.util.Arrays;
+import java.util.Set;
 
 public class RoboCat extends Pet {
     Species species;
 
-    public RoboCat(String nickname, int age, int tricklevel, String[] habits) {
-        super(nickname, age, tricklevel, Arrays.asList(habits));
+    public RoboCat(String nickname, int age, int tricklevel, Set<String> habits) {
+        super(nickname, age, tricklevel, habits);
         this.species = species;
     }
 

@@ -1,21 +1,55 @@
 package HW7;
 
 
-
 import java.util.Arrays;
 import java.util.Objects;
 
 public class Human {
-
-    private String name="";
-    private String surname="";
-    private int year=0;
-    private int iq=0;
+    private Pet pet;
+    private String name = "";
+    private String surname = "";
+    private int year = 0;
+    private int iq = 0;
     private Human mother;
     private Human father;
-    private String [][]schedule= new String[6][2];
+    private String[][] schedule = new String[6][2];
     private Family family;
 
+
+    public Human(String name, String surname, int year) {
+        this.name = name;
+        this.surname = surname;
+        this.year = year;
+    }
+
+    public Human(String name, String surname) {
+        this.name = name;
+        this.surname = surname;
+    }
+
+    public Human(String name, String surname, int year, Human father, Human mother) {
+        this.name = name;
+        this.surname = surname;
+        this.year = year;
+        this.father = father;
+        this.mother = mother;
+    }
+
+    public Human(String name, String surname, int year, Human father, Human mother, int iq, String[][] schedule) {
+        this.name = name;
+        this.surname = surname;
+        this.year = year;
+        this.father = father;
+        this.mother = mother;
+        this.mother = mother;
+        this.iq = iq;
+        this.schedule = schedule;
+    }
+
+
+    public Human() {
+
+    }
 
     public Family getFamily() {
         return family;
@@ -25,40 +59,12 @@ public class Human {
         this.family = family;
     }
 
-    public Human(String name, String surname, int year)
-    {
-        this.name=name;
-        this.surname=surname;
-        this.year=year;
-    }
-    public Human(String name, String surname)
-    {
-        this.name=name;
-        this.surname=surname;
-    }
-    public Human(String name, String surname, int year, Human father, Human mother)
-    {
-        this.name=name;
-        this.surname=surname;
-        this.year=year;
-        this.father=father;
-        this.mother=mother;
-    }
-    public Human(String name, String surname, int year, Human father, Human mother, int iq, String [][]schedule)
-    {
-        this.name=name;
-        this.surname=surname;
-        this.year=year;
-        this.father=father;
-        this.mother=mother;
-        this.mother=mother;
-        this.iq=iq;
-        this.schedule=schedule;
+    public Pet getPet() {
+        return pet;
     }
 
-
-    public Human(){
-
+    public void setPet(Pet pet) {
+        this.pet = pet;
     }
 
     public String getName() {
@@ -120,6 +126,10 @@ public class Human {
         this.schedule = schedule;
     }
 
+    public String greetPet() {
+        return "Hello, my pet";
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -155,8 +165,6 @@ public class Human {
                 ", family=" + family +
                 '}';
     }
-
-
 
 
     @Override

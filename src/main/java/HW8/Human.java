@@ -1,6 +1,8 @@
 package HW8;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 public class Human {
@@ -12,7 +14,7 @@ public class Human {
     private Pet pet;
     private Human mother;
     private Human father;
-    private String[][] schedule = new String[6][2];
+    private Map<Main.DayOfWeek,String> schedule = new HashMap<>();
     private Family family;
 
 
@@ -35,7 +37,7 @@ public class Human {
         this.mother = mother;
     }
 
-    public Human(String name, String surname, int year, Human father, Human mother, int iq, Pet pet, String[][] schedule) {
+    public Human(String name, String surname, int year, Human father, Human mother, int iq, Pet pet, Map schedule) {
         this.name = name;
         this.surname = surname;
         this.year = year;
@@ -112,11 +114,11 @@ public class Human {
         this.father = father;
     }
 
-    public String[][] getSchedule() {
+    public Map<Main.DayOfWeek, String> getSchedule() {
         return schedule;
     }
 
-    public void setSchedule(String[][] schedule) {
+    public void setSchedule(Map<Main.DayOfWeek, String> schedule) {
         this.schedule = schedule;
     }
 
@@ -132,15 +134,13 @@ public class Human {
                 Objects.equals(pet, human.pet) &&
                 Objects.equals(mother, human.mother) &&
                 Objects.equals(father, human.father) &&
-                Arrays.equals(schedule, human.schedule) &&
+                Objects.equals(schedule, human.schedule) &&
                 Objects.equals(family, human.family);
     }
 
     @Override
     public int hashCode() {
-        int result = Objects.hash(name, surname, year, iq, pet, mother, father, family);
-        result = 31 * result + Arrays.hashCode(schedule);
-        return result;
+        return Objects.hash(name, surname, year, iq, pet, mother, father, schedule, family);
     }
 
     @Override
@@ -153,14 +153,14 @@ public class Human {
                 ", pet=" + pet +
                 ", mother=" + mother +
                 ", father=" + father +
-                ", schedule=" + Arrays.toString(schedule) +
+                ", schedule=" + schedule +
                 ", family=" + family +
                 '}';
     }
 
     public String greetPet() {
 
-        return "Hello, ";
+        return "Hello my dear pet";
     }
 
 

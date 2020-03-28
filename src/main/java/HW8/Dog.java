@@ -2,12 +2,13 @@ package HW8;
 
 
 import java.util.Arrays;
+import java.util.Set;
 
 public class Dog extends Pet {
     Species species;
 
-    public Dog(String nickname, int age, int tricklevel, String[] habits) {
-        super(nickname, age, tricklevel, Arrays.asList(habits));
+    public Dog(String nickname, int age, int tricklevel, Set<String> habits) {
+        super(nickname, age, tricklevel, habits);
         this.species=species;
     }
 

@@ -2,6 +2,8 @@ package HW8;
 
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Main {
     enum DayOfWeek {
@@ -34,6 +36,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
+        DayOfWeek dow;
         Human hmn2 = new Human();
         Family fmly = new Family();
         Human fthr = new Human();
@@ -51,7 +54,7 @@ public class Main {
         hmn2.setMother(mthr);
         hmn2.setIq(80);
 
-        hmn2.setSchedule(new String[][]{{"Monday"}, {"To go university"}});
+        hmn2.setSchedule(Map.of(DayOfWeek.Monday, "go to school"));
         //  System.out.println(hmn2);
 
         //}

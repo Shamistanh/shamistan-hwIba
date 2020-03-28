@@ -3,6 +3,7 @@ package HW8;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Set;
 
 public abstract class Pet {
     int TrickLevel;
@@ -10,9 +11,9 @@ public abstract class Pet {
     private String nickname = "";
     private int age;
     private int tricklevel = 0;
-    private Collection<String> habits;
+    private Set<String> habits;
 
-    public Pet(Species species, String nickname, int age, int tricklevel, Collection<String> habits) {
+    public Pet(Species species, String nickname, int age, int tricklevel, Set<String> habits) {
         this.species = species;
         this.nickname = nickname;
         this.age = age;
@@ -25,7 +26,7 @@ public abstract class Pet {
         this.nickname = nickname;
     }
 
-    public Pet(String nickname, int age, int tricklevel, Collection<String> habits) {
+    public Pet(String nickname, int age, int tricklevel, Set<String> habits) {
         this.nickname = nickname;
         this.age = age;
         this.tricklevel = tricklevel;
@@ -73,7 +74,7 @@ public abstract class Pet {
         return habits;
     }
 
-    public void setHabits(Collection<String> habits) {
+    public void setHabits(Set<String> habits) {
         this.habits = habits;
     }
 
