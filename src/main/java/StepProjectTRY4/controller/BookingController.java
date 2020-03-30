@@ -34,7 +34,7 @@ public class BookingController {
 
 
     public void makeBooking() {
-       // try{
+       try{
         FlightController fc = new FlightController(console,service);
 
             List<Passenger> passengers = new ArrayList<>();
@@ -62,9 +62,9 @@ public class BookingController {
 
             console.printLn(db.bookings.getAllBy(u -> u.getUser_id() == user_id).toString());
             //  System.out.println(db.bookings.getAll());
-//        }catch (Exception ex){
-//            console.printLn("You should login first");
-//        }
+        }catch (Exception ex){
+          console.printLn("Something went wrong");
+        }
 
     }
 
