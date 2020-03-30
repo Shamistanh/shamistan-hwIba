@@ -6,7 +6,6 @@ import java.util.*;
 public class Family {
     private Human hmn = new Human();
     private Human mother = new Human();
-    private Human father = hmn.getFather();
     private List<Human> children = new ArrayList<>();
 
 
@@ -18,14 +17,6 @@ public class Family {
 
     public void setChildren(List<Human> children) {
         this.children = children;
-    }
-
-    public Human getFather() {
-        return father;
-    }
-
-    public void setFather(Human father) {
-        this.father = father;
     }
 
 //    public Pet getPet() {
@@ -86,13 +77,12 @@ public class Family {
         Family family = (Family) o;
         return Objects.equals(hmn, family.hmn) &&
                 Objects.equals(mother, family.mother) &&
-                Objects.equals(father, family.father) &&
                 Objects.equals(children, family.children);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(hmn, mother, father, children);
+        return Objects.hash(hmn, mother, children);
     }
 
 
@@ -101,7 +91,6 @@ public class Family {
         return "Family{" +
                 "hmn=" + hmn +
                 ", mother=" + mother +
-                ", father=" + father +
                 ", children=" + children +
                 '}';
     }

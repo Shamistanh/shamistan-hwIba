@@ -6,13 +6,11 @@ import java.util.Objects;
 public class Family {
     private Human hmn = new Human();
     private Human mother = new Human();
-    private Human father = hmn.getFather();
     private Human[] children = new Human[0];
 
     public Family(Human hmn, Human mother, Human father, Human[] children) {
         this.hmn = hmn;
         this.mother = mother;
-        this.father = father;
         this.children = children;
     }
 
@@ -26,14 +24,6 @@ public class Family {
 
     public void setChildren(Human[] children) {
         this.children = children;
-    }
-
-    public Human getFather() {
-        return father;
-    }
-
-    public void setFather(Human father) {
-        this.father = father;
     }
 
 //    public Pet getPet() {
@@ -109,13 +99,12 @@ public class Family {
         Family family = (Family) o;
         return Objects.equals(hmn, family.hmn) &&
                 Objects.equals(mother, family.mother) &&
-                Objects.equals(father, family.father) &&
                 Arrays.equals(children, family.children);
     }
 
     @Override
     public int hashCode() {
-        int result = Objects.hash(hmn, mother, father);
+        int result = Objects.hash(hmn, mother);
         result = 31 * result + Arrays.hashCode(children);
         return result;
     }
@@ -125,7 +114,6 @@ public class Family {
         return "Family{" +
                 "hmn=" + hmn +
                 ", mother=" + mother +
-                ", father=" + father +
                 ", children=" + Arrays.deepToString(children) +
                 '}';
 
