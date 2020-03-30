@@ -1,5 +1,7 @@
 package StepProjectTRY4.dao;
 
+import StepProjectTRY4.entity.Flight;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -39,6 +41,10 @@ public class DAOAbstractFileBin<A extends Identifiable> implements DAO<A> {
                 getAll().stream().filter(p).collect(Collectors.toList());
 //        getAll().stream().filter(p::test).collect(Collectors.toList());
 //        getAll().stream().filter(a -> p.test(a)).collect(Collectors.toList());
+    }
+    @Override
+    public Object updateSeats(Flight fl, long seats){
+        return fl.setSeats(fl.getSeats()-seats);
     }
 
     @Override

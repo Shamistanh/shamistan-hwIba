@@ -1,6 +1,7 @@
 package StepProjectTRY4;
 
-import StepProjectTRY4.controller.AppController;
+import StepProjectTRY4.controller.FlightController;
+import StepProjectTRY4.controller.BookingController;
 import StepProjectTRY4.io.Console;
 import StepProjectTRY4.io.UnixConsole;
 import StepProjectTRY4.service.AppService;
@@ -12,11 +13,12 @@ public class BookingApp {
         Console console = new UnixConsole(new Scanner(System.in));
         Database db = new Database();
         AppService service = new AppService(db);
-        AppController controller = new AppController(console, service);
-        if(db.flights.getAll().isEmpty()){
+        FlightController controller = new FlightController(console, service);
+        BookingController bookingController = new BookingController(console,service);
+        if(!db.flights.getAll().isEmpty()){
             db.createInitialData();
-        }
-        console.printLn("Hello, Welcome to our website\nIf you want to login press 1 to log out press 11, to show all flights press 2\n to make new booking press 3, to check your bookings press 4, to cancel booking press 5, to quiz program press 6");
+       }
+        console.printLn("Hello, Welcome to our website\nIf you want to login press 1\nto log out press 11,\nto show all flights in 24 hours press 2\nto make new booking press 3, \nto check your bookings press 4, \nto cancel booking press 5, \nto check online board press 6\nto quit program press 7");
 
         int u = -1;
         boolean quit = false;
@@ -27,10 +29,11 @@ public class BookingApp {
                 case "1": u = controller.login(); break;
                 case "11": controller.logout(); break;
                 case "2": controller.showAllFlights(); break;
-                case "3": controller.makeBooking(); break;
-                case "4": controller.myBookings(); break;
-                case "5": controller.cancelBooking(); break;
-                case "6": console.printLn("Bye!"); quit = true; break;
+                case "3": bookingController.makeBooking(); break;
+                case "4": bookingController.myBookings(); break;
+                case "5": bookingController.cancelBooking(); break;
+                case "6": controller.menu(); break;
+                case "7": console.printLn("Bye!"); quit = true; break;
                 default : console.print("Wrong input");
             }
         }

@@ -7,7 +7,7 @@ import java.io.Serializable;
 public class User implements Identifiable, Serializable {
     private long id;
     private String login;
-    private String passwd;
+    private String surname;
 
     static long counter;
 
@@ -23,7 +23,7 @@ public class User implements Identifiable, Serializable {
     public User(long id, String login, String passwd) {
 
         this.login = login;
-        this.passwd = passwd;
+        this.surname = passwd;
         this.id = id;
     }
 
@@ -40,11 +40,11 @@ public class User implements Identifiable, Serializable {
         return login;
     }
 
-    public String getPasswd() {
-        return passwd;
+    public String getSur() {
+        return surname;
     }
 
     public String represent() {
-        return String.format("User{id=%d, login='%s', passwd='%s'}", id, login, passwd);
+        return String.format("User{id=%d, login='%s', passwd='%s'}", id, login, surname);
     }
 }
