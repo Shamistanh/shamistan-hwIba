@@ -57,7 +57,6 @@ public class Main {
 
         //}
         fmly.setMother(mthr);
-        fmly.setFather(fthr);
         Human as2 = new Human("Saam", "stfghasas", 70);
         Human as3 = new Human("lfdfdaam", "stfgdfdfdhasas", 70);
         // DomesticCat dc = new DomesticCat(Species.ROCK,"rocky",5,23,new String[]{"eat", "play"});
