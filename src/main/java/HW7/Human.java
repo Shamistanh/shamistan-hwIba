@@ -10,8 +10,7 @@ public class Human {
     private String surname = "";
     private int year = 0;
     private int iq = 0;
-    private Human mother;
-    private Human father;
+
     private String[][] schedule = new String[6][2];
     private Family family;
 
@@ -27,21 +26,11 @@ public class Human {
         this.surname = surname;
     }
 
-    public Human(String name, String surname, int year, Human father, Human mother) {
-        this.name = name;
-        this.surname = surname;
-        this.year = year;
-        this.father = father;
-        this.mother = mother;
-    }
 
-    public Human(String name, String surname, int year, Human father, Human mother, int iq, String[][] schedule) {
+    public Human(String name, String surname, int year, int iq, String[][] schedule) {
         this.name = name;
         this.surname = surname;
         this.year = year;
-        this.father = father;
-        this.mother = mother;
-        this.mother = mother;
         this.iq = iq;
         this.schedule = schedule;
     }
@@ -100,24 +89,6 @@ public class Human {
         this.iq = iq;
     }
 
-    public Human getMother() {
-        return mother;
-    }
-
-
-    public void setMother(Human mother) {
-        this.mother = mother;
-    }
-
-
-    public Human getFather() {
-        return father;
-    }
-
-    public void setFather(Human father) {
-        this.father = father;
-    }
-
     public String[][] getSchedule() {
         return schedule;
     }
@@ -139,15 +110,13 @@ public class Human {
                 iq == human.iq &&
                 Objects.equals(name, human.name) &&
                 Objects.equals(surname, human.surname) &&
-                Objects.equals(mother, human.mother) &&
-                Objects.equals(father, human.father) &&
                 Arrays.equals(schedule, human.schedule) &&
                 Objects.equals(family, human.family);
     }
 
     @Override
     public int hashCode() {
-        int result = Objects.hash(name, surname, year, iq, mother, father, family);
+        int result = Objects.hash(name, surname, year, iq, family);
         result = 31 * result + Arrays.hashCode(schedule);
         return result;
     }
@@ -159,8 +128,6 @@ public class Human {
                 ", surname='" + surname + '\'' +
                 ", year=" + year +
                 ", iq=" + iq +
-                ", mother=" + mother +
-                ", father=" + father +
                 ", schedule=" + Arrays.toString(schedule) +
                 ", family=" + family +
                 '}';

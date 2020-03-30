@@ -50,8 +50,6 @@ public class Main {
         hmn2.setName("Michael");
         hmn2.setSurname("Karloene");
         hmn2.setYear(72);
-        hmn2.setFather(fthr);
-        hmn2.setMother(mthr);
         hmn2.setIq(80);
 
         hmn2.setSchedule(Map.of(DayOfWeek.Monday, "go to school"));

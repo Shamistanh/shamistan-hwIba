@@ -12,8 +12,6 @@ public class Human {
     private int year = 0;
     private int iq = 0;
     private Pet pet;
-    private Human mother;
-    private Human father;
     private Map<Main.DayOfWeek,String> schedule = new HashMap<>();
     private Family family;
 
@@ -29,21 +27,11 @@ public class Human {
         this.surname = surname;
     }
 
-    public Human(String name, String surname, int year, Human father, Human mother) {
-        this.name = name;
-        this.surname = surname;
-        this.year = year;
-        this.father = father;
-        this.mother = mother;
-    }
 
-    public Human(String name, String surname, int year, Human father, Human mother, int iq, Pet pet, Map schedule) {
+    public Human(String name, String surname, int year, int iq, Pet pet, Map schedule) {
         this.name = name;
         this.surname = surname;
         this.year = year;
-        this.father = father;
-        this.mother = mother;
-        this.mother = mother;
         this.iq = iq;
         this.pet = pet;
         this.schedule = schedule;
@@ -96,24 +84,6 @@ public class Human {
         this.pet = pet;
     }
 
-    public Human getMother() {
-        return mother;
-    }
-
-
-    public void setMother(Human mother) {
-        this.mother = mother;
-    }
-
-
-    public Human getFather() {
-        return father;
-    }
-
-    public void setFather(Human father) {
-        this.father = father;
-    }
-
     public Map<Main.DayOfWeek, String> getSchedule() {
         return schedule;
     }
@@ -132,15 +102,13 @@ public class Human {
                 Objects.equals(name, human.name) &&
                 Objects.equals(surname, human.surname) &&
                 Objects.equals(pet, human.pet) &&
-                Objects.equals(mother, human.mother) &&
-                Objects.equals(father, human.father) &&
                 Objects.equals(schedule, human.schedule) &&
                 Objects.equals(family, human.family);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, surname, year, iq, pet, mother, father, schedule, family);
+        return Objects.hash(name, surname, year, iq, pet,schedule, family);
     }
 
     @Override
@@ -151,8 +119,6 @@ public class Human {
                 ", year=" + year +
                 ", iq=" + iq +
                 ", pet=" + pet +
-                ", mother=" + mother +
-                ", father=" + father +
                 ", schedule=" + schedule +
                 ", family=" + family +
                 '}';
