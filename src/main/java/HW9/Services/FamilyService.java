@@ -42,6 +42,21 @@ public class FamilyService {
         System.out.println("Famil deleted successfully");
     }
 
+    public void bornChild(Family fmly, String gender){
+        if(gender.equals("Musciluine")){
+            cfd.family.getAllFamilies()
+                    .stream().filter(f->f.getId()==fmly.getId())
+                    .findFirst().get()
+                    .addChild(new Human("Eldar","sdddsd"));
+
+        }else{
+            cfd.family.getAllFamilies()
+                    .stream().filter(f->f.getId()==fmly.getId())
+                    .findFirst().get()
+                    .addChild(new Human("Nargis","sdddsd"));
+        }
+    }
+
     public Collection<Family> getFamilyById(int id){
         return cfd.family.getFamilyByIndex(f->f.getId()==id);
     }
