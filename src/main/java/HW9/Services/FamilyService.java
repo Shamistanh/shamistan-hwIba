@@ -33,8 +33,8 @@ public class FamilyService {
         return fm.countFamily();
     }
 
-    public Family createNewFamily(Human hm1, Human hm2){
-        return cfd.family.create(new Family(hm1, hm2));
+    public void createNewFamily(Human hm1, Human hm2){
+        cfd.family.create(new Family(hm1, hm2));
     }
 
     public void deleteFamilyByIndex(int idx){

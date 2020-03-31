@@ -12,7 +12,7 @@ public interface DAO<A> {
     Collection<A> getAllFamilies();
     Collection<A> getFamilyByIndex(Predicate<A> p);
     Optional<A> get(int id);
-    Family create(A data);
+    void create(A data);
     void deleteFamily(int id);
     void deleteFamily(Predicate<A> p);
 

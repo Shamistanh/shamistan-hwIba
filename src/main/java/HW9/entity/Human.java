@@ -1,12 +1,15 @@
 package HW9.entity;
 
 
+import HW9.DAO.Identifiable;
+
+import java.io.Serializable;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-public class Human {
+public class Human implements Serializable, Identifiable {
 
     private String name;
     private String surname;
@@ -14,7 +17,8 @@ public class Human {
     private int iq = 0;
     private Pet pet;
     private Family family;
-
+    private long id=0;
+    private static final long serialVersionUID = 1L;
 
     public Human(String name, String surname, int year) {
         this.name = name;
@@ -83,6 +87,14 @@ public class Human {
         this.pet = pet;
     }
 
+    @Override
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -124,5 +136,6 @@ public class Human {
     protected void finalize() throws Throwable {
         System.out.println("Finalize method worked in Human class");
     }
+
 
 }

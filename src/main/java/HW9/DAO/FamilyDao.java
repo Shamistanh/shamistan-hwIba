@@ -38,9 +38,10 @@ public class FamilyDao<A extends Identifiable> implements DAO<A> {
     }
 
     @Override
-    public Family create(A data) {
-
-        return null;
+    public void create(A data) {
+        Collection<A> as = getAllFamilies();
+        as.add(data);
+        write(as);
     }
 
 
